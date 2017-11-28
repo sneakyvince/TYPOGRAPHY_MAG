@@ -1,0 +1,70 @@
+/* ========== SECTION 1 - content animation ========== */
+#section0 > .grid {
+	transform: translate3d(0, -9.6vw, 0);
+	opacity: 0;
+	transition: transform .8s cubic-bezier(0.16, 0.68, 0.43, 0.99),
+				opacity .8s ease-in-out;
+}
+
+#section0.active > .grid {
+	transform: translate3d(0,0,0);
+	opacity: 1;
+}
+
+#section1 > .fp-slides > .fp-slidesContainer > .slide > .grid > h1,
+#section1 > .fp-slides > .fp-slidesContainer > .slide > .grid > p,
+#section1 > .fp-slides > .fp-slidesContainer > .slide > .grid > h2,
+#section3 > .fp-slides > .fp-slidesContainer > .slide > .grid > h1,
+#section3 > .fp-slides > .fp-slidesContainer > .slide > .grid > p,
+#section3 > .fp-slides > .fp-slidesContainer > .slide > .grid > h2{
+	transform: translate3d(-9.6vw, 0, 0);
+	opacity: 0;
+	transition: transform .8s cubic-bezier(0.16, 0.68, 0.43, 0.99),
+				opacity .8s ease-in-out;
+}
+
+#section1.active > .fp-slides > .fp-slidesContainer > .slide > .grid > h1,
+#section1.active > .fp-slides > .fp-slidesContainer > .slide > .grid > p,
+#section1.active > .fp-slides > .fp-slidesContainer > .slide > .grid > h2,
+#section3.active > .fp-slides > .fp-slidesContainer > .slide > .grid > h1,
+#section3.active > .fp-slides > .fp-slidesContainer > .slide > .grid > p,
+#section3.active > .fp-slides > .fp-slidesContainer > .slide > .grid > h2  {
+	transform: translate3d(0, 0, 0);
+	opacity: 1;
+}
+
+.slide.active > .grid > svg {
+    stroke-dasharray: 1500;
+    stroke-dashoffset: 1500;
+    animation: draw 2.5s linear forwards;
+}
+
+@keyframes draw {
+    0% {
+		-webkit-text-stroke-width: 5px;
+        stroke-width: 5px;
+        stroke-opacity: 1;
+    }
+
+    80% {
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-opacity: 0;
+    }
+}
+
+#section2 > .grid,
+#section4 > .grid  {
+	transform: translate3d(0, 9.6vw, 0);
+	opacity: 0;
+	transition: transform .8s cubic-bezier(0.16, 0.68, 0.43, 0.99),
+				opacity .8s ease-in-out;
+}
+
+#section2.active > .grid,
+#section4.active > .grid {
+    transform: translate3d(0,0,0);
+	opacity: 1;
+}
